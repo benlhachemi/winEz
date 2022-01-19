@@ -21,15 +21,15 @@ const db = mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@db-mongodb-sgp1
 //middlewares
 app.use(cors())
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, '../next-js/out')))
+app.use(express.static(path.join(__dirname, './out')))
 
 //routes
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '../next-js/out/index.html'));
+    res.sendFile(path.join(__dirname, '.out/index.html'));
 });
 
 app.get('/en', (req,res) => {
-    res.sendFile(path.join(__dirname, '../next-js/out/en.html'));
+    res.sendFile(path.join(__dirname, './out/en.html'));
 });
 
 app.get('/get-settings', async(req, res) => {
